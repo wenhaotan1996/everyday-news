@@ -1,6 +1,7 @@
 import { decode, encode } from "html-entities";
 import Link from "next/link";
 import LiveTime from "./LiveTime";
+import NewsImage from "./NewsImage";
 
 type Props = {
   news: News[];
@@ -14,13 +15,13 @@ export default function NewsList({ news }: Props) {
           className="pointer-events-none flex flex-col overflow-hidden rounded-lg bg-slate-200 shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:bg-slate-300 hover:shadow-lg dark:bg-gray-700 dark:hover:bg-gray-800"
           key={article.url}
         >
-          {article.image && (
-            <img
-              className="h-56 w-full object-cover"
+          <div className="relative h-56 w-full">
+            <NewsImage
+              className="object-cover"
               src={article.image}
               alt={article.title}
             />
-          )}
+          </div>
           <div className="mt-4 flex flex-1 flex-col px-3">
             <div className="flex-1">
               <h2 className="line-clamp-3 text-center font-serif text-lg font-bold">

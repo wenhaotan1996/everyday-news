@@ -1,6 +1,7 @@
 import LiveTime from "@/components/LiveTime";
 import Link from "next/link";
 import NotFoundPage from "../not-found";
+import NewsImage from "@/components/NewsImage";
 
 type Props = {
   searchParams: News;
@@ -9,13 +10,13 @@ type Props = {
 export default function ArticlePage({ searchParams: article }: Props) {
   return article?.url ? (
     <article className="mx-auto max-w-md overflow-x-hidden px-3 py-6 md:max-w-lg md:py-10 lg:max-w-2xl">
-      {article.image && (
-        <img
-          className="w-full overflow-hidden rounded-lg object-contain shadow-lg"
+      <div className="relative h-[200px] w-full overflow-hidden rounded-lg shadow-lg md:h-[300px] lg:h-[400px]">
+        <NewsImage
+          className="object-contain"
           src={article.image}
           alt={article.title}
         />
-      )}
+      </div>
 
       <h1 className="py-4 font-serif text-4xl capitalize lg:py-6">
         {article.title}

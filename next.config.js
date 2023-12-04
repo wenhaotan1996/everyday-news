@@ -13,7 +13,13 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "3.bp.blogspot.com",
+        hostname: "**",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "**",
         port: "",
         pathname: "/**",
       },
